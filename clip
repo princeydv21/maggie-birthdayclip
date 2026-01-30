@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Maggie Ji</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        background: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Georgia', serif;
+        color: white;
+        overflow: hidden;
+    }
+
+    .start-screen {
+        position: absolute;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .start-screen h1 {
+        font-size: 24px;
+        color: #ff5c8a;
+        animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+        0% { opacity: 0.5; }
+        50% { opacity: 1; }
+        100% { opacity: 0.5; }
+    }
+
+    .container {
+        display: none;
+        text-align: center;
+        max-width: 90%;
+    }
+
+    .line {
+        font-size: 22px;
+        margin: 18px 0;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: showLine 1.5s forwards;
+    }
+
+    .line:nth-child(1) { animation-delay: 1s; }
+    .line:nth-child(2) { animation-delay: 3s; }
+    .line:nth-child(3) { animation-delay: 5s; }
+    .line:nth-child(4) { animation-delay: 7s; }
+    .line:nth-child(5) { animation-delay: 9s; }
+    .line:nth-child(6) { animation-delay: 11s; }
+
+    .highlight {
+        color: #ff5c8a;
+        font-size: 26px;
+        font-weight: bold;
+    }
+
+    @keyframes showLine {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="start-screen" onclick="startVideo()">
+    <h1>Tap to begin 💖</h1>
+</div>
+
+<div class="container" id="video">
+    <div class="line">Some people are special…</div>
+    <div class="line">Not because they try to be,</div>
+    <div class="line">But because they feel like home.</div>
+    <div class="line">You are comfort, calm, and magic.</div>
+    <div class="line">You matter more than words can say.</div>
+    <div class="line highlight">Happy Birthday, MAGGIE JI 🙃 ❤️</div>
+</div>
+
+<audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function startVideo() {
+    document.querySelector('.start-screen').style.display = 'none';
+    document.getElementById('video').style.display = 'block';
+    document.getElementById('bgMusic').play();
+}
+</script>
+
+</body>
+</html>
